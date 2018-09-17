@@ -12,13 +12,15 @@ class ViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     // Do any additional setup after loading the view, typically from a nib.
+    configUI()
   }
 
-  override func didReceiveMemoryWarning() {
-    super.didReceiveMemoryWarning()
-    // Dispose of any resources that can be recreated.
+  func configUI() {
+    let label = UILabel()
+    label.text = Environment.shared.value(for: .endpoint)
+    label.sizeToFit()
+    label.center = view.center
+    view.addSubview(label)
   }
-
-
 }
 
